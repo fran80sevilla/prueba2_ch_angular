@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+<app-create-user></app-create-user>
+	
+	<div class="offset-md-4 col-md-3">
+		<label for=""><font size="2">Search</font></label>
+		<input [(ngModel)]="palabra" class="form-control mb-2" type="text" aria-label="Busqueda">
+	</div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Nombre</th>
+				<th scope="col">Email</th>
+				<th scope="col">Status</th>
+			</tr>
+	   </thead>
+	    <tbody>
+		    <tr  *ngFor="let usuario of array_usuarios | busquedaPipe : {nombre: palabra};">
+		      <th scope="row">{{usuario.id}}</th>
+		      <td><a [routerLink]="['/usuario-detalle', funcionAsigna(usuario.id)]">{{ usuario.nombre }}</a></td>
+		      <td><a [routerLink]="['/usuario-detalle', funcionAsigna(usuario.id)]">{{ usuario.email }}</a></td>
+		      <td>
+		      	<h6><span class="badge" [ngClass]="(usuario.status=='Active') ? 'badge-success':'badge-info'">{{usuario.status}}</span></h6>
+		      </td>
+		    </tr>
+		</tbody>
+	</table>
+</div>

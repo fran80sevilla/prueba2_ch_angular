@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<nav class="navbar sticky-top navbar-light bg-light">
+	<div class="container">
+  		<a class="navbar-brand" href="#">Guest</a>
+    </div>
+</nav>
+<div class="container">
+	<div *ngFor="let usuario of usuarioDetalle">
+		<div class="card" style="width: 100%;margin-top: 3% !important; padding: 2%;">
+  			<div class="card-body">
+  				<h5 class="card-title">Edit Guest</h5>
+  				<hr>
+    			<div class="form-row mt-5">
+		    		<div class="offset-md-1 col-md-3 mb-2">
+		        		<label for="">Nombre</label>
+		        		<input type="text" class="form-control" id="" value="{{usuario.nombre}}" readonly>
+		    		</div>
+			    	<div class="offset-md-1 col-md-3 mb-2">
+			        	<label for="">email</label>
+			      		<input type="text" class="form-control" id="" value="{{usuario.email}}" readonly>
+			    	</div>
+			    	<div class="offset-md-1 col-md-3 mb-2">
+			        	<label for="">Status</label>
+			      		<h6><span class="badge" [ngClass]="(usuario.status=='Active') ? 'badge-success':'badge-info'">{{usuario.status}}</span></h6>
+					</div>
+				</div>
+  			</div>
+		</div>
+	</div>
+</div>

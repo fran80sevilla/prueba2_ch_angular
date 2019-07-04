@@ -1,0 +1,14 @@
+<div class="formulario">
+	<form #registroForm="ngForm" (ngSubmit)="onSubmit()" class="bg-light p-4 offset-md-4 col-md-4" action="">
+		<h4 class="text-center">Registro</h4>
+	  	<div class="form-group">
+		    <input type="text"  name="email" #nombre="ngModel" [(ngModel)]="nombreUsuario" class="form-control" placeholder="Username" required>
+		</div>
+		<div class="form-group">
+		    <input class="form-control" type="password" name="password" #password="ngModel" [(ngModel)]="passUsuario"  placeholder="Password" required>
+		</div>
+		    <button class="btn btn-success btn-block" type="submit" id="login_id">Log in</button>
+	</form>
+</div>
+
+
